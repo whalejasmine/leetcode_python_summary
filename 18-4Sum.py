@@ -21,7 +21,6 @@ class Solution:
     def fourSum(self, nums, target):
         nums, result, lookup = sorted(nums), [], {}
         for i in range(0, len(nums) - 1):
-            print(i)
             for j in range(i + 1, len(nums)): 
                 if nums[i] + nums[j] not in lookup:
                     lookup[nums[i] + nums[j]] = []
