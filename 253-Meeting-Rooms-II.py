@@ -117,6 +117,9 @@ class Solution(object):
         return used_rooms
 
 
+if __name__ == "__main__":
+    print (Solution1().minMeetingRooms([Interval(0, 30), Interval(5, 10), Interval(15, 20), Interval(15,18)]))
+    print (Solution2().minMeetingRooms([Interval(1, 4), Interval(2, 4)]))
 
 
 

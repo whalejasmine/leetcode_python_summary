@@ -26,7 +26,7 @@ class Solution1:
     		# no node continue
     		if node is None:
     			continue
-    		# if seen is not none, append node and its children to the stack
+    		# if seen havn't seen, append node and its children to the stack
     		if not seen:
     			stack.extend([(1,node),(0,node.right),(0,node,left)])
     		# otherwise ????
@@ -37,7 +37,8 @@ class Solution1:
     
 
      	return True
-
+# Time: O(nlogn)
+# Space: O(n)
 class Solution2:
     def isBalanced(self, root: 'TreeNode') -> 'bool':
         return (self.getHeight(root)>=0)
