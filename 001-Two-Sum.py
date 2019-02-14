@@ -46,3 +46,8 @@ class Solution:
             if target-num in d:
                 return d[target-num], i
             d[num]=i
+
+
+if __name__ == "__main__":
+    print Solution().twoSum([3,2,4],6). # if put d[num]=i at the front it will return [0,0]
+

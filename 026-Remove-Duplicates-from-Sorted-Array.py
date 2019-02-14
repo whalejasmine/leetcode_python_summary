@@ -12,20 +12,20 @@
 #
 
 class Solution:
-    # @param a list of integers
-    # @return an integer
-    def removeDuplicates(self, A):
-        if len(A) == 0:
+    def removeDuplicates(self, nums: 'List[int]') -> 'int':
+        if len(nums)==0:
             return 0
         
-        last, i = 0, 1
-        while i < len(A):
-            if A[last] != A[i]:
-                last += 1
-                A[last] = A[i]
-            i += 1
-            
-        return last + 1
+        last, i =0,1
+        
+        while i<len(nums):
+            if nums[last]!=nums[i]:
+                #count non duplicate
+                last+=1
+                #keep record last iteration value of i in order to compare with next iteration
+                nums[last]=nums[i]                
+            i+=1
+        return last +1
 
 if __name__ == "__main__":
     print Solution().removeDuplicates([1, 1, 2])

@@ -1,3 +1,6 @@
+
+
+
 # Time:  O(n)
 # Space: O(1)
 #
@@ -9,15 +12,27 @@
 # design an algorithm to find the maximum profit.
 
 class Solution:
-    # @param prices, a list of integer
-    # @return an integer
-    def maxProfit(self, prices):
-        max_profit, buy_price = 0, float("inf")
+    def maxProfit(self, prices: 'List[int]') -> 'int':
+        max_profit,min_price=0,float('inf')
         for price in prices:
-            buy_price = min(buy_price, price)
-            max_profit = max(max_profit, price - buy_price)  
+            min_price=min(price, min_price)
+            max_profit=max(max_profit,price-min_price)
         return max_profit
+            
 
 if __name__ == "__main__":
     result = Solution().maxProfit([3, 2, 1, 4, 2, 5, 6])
     print (result)
+
+
+
+# Time:  O(n^2) loop runs n(n-1)/2
+# Space: O(1); profit
+
+class Solution:
+    def maxProfit(self, prices: 'List[int]') -> 'int':
+        profit = 0
+        for i in range(len(prices)-1):
+            for j in range(i,len(prices)):
+                profit = max(profit,prices[j]-prices[i])
+        return profit
