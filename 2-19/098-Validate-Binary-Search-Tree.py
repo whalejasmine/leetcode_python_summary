@@ -47,7 +47,7 @@ class Solution:
         stack=[(root,None,None)]
         while stack:
             root, lower_limit, upper_limit = stack.pop()
-
+        # upper limit??
             if root.right:
                 if root.right.val > root.val:
                     if upper_limit and root.right.val >= upper_limit:
@@ -74,13 +74,14 @@ class Solution:
     def isValidBST(self, root: 'TreeNode') -> 'bool':
         stack,inorder=[],float('-inf')
         while stack or root:
+            #traverse left most leaf
             while root:
                 stack.append(root)
                 root=root.left
             root=stack.pop()
             # If next element in inorder traversal
             # is smaller than the previous one
-            # that's not BST.
+            # that's not BST.  #why?
             if root.val <=inorder:
                 return False
             inorder=root.val
