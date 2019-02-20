@@ -27,5 +27,15 @@ class Solution:
             i+=1
         return last +1
 
+class Solution:
+    def removeDuplicates(self, nums: 'List[int]') -> 'int':
+        if len(nums)==0 :return 0
+        left=0
+        for i, num in enumerate(nums[1:]):# slow????
+            if nums[left]!=num:
+                left+=1
+                nums[left]=num
+        return left+1
+
 if __name__ == "__main__":
     print Solution().removeDuplicates([1, 1, 2])
