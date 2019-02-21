@@ -37,7 +37,7 @@ class Solution1:
         # return 0 when nums list only have one element
         return result if result <=len(nums) else 0
 
-# Method 2 Binary search with Recursion 
+# Method 2 Binary search with Recursion  问题
 # Time: O(nlogn) 
 # Space: O(nlogn) ???
 

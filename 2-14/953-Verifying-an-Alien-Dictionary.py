@@ -15,10 +15,10 @@ class Solution(object):
             # Find the first difference word1[k] != word2[k].
             for k in xrange(min(len(word1), len(word2))):
                 # If they compare badly, it's not sorted.
-                if word1[k] != word2[k]:
+                if word1[k] != word2[k]:# why has this
                     if order_index[word1[k]] > order_index[word2[k]]:
                         return False
-                    break
+                    break  #why break
             else:
                 # If we didn't find a first difference, the
                 # words are like ("app", "apple").

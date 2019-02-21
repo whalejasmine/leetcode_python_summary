@@ -65,7 +65,7 @@ def minWindow(self, s, t):
             formed += 1
 
         # Try and contract the window till the point where it ceases to be 'desirable'.
-        while l <= r #"=" important and formed == required:
+        while l <= r  and formed == required:  #"=" important
             character = s[l]
 
             # Save the smallest window until now.
