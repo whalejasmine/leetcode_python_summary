@@ -88,3 +88,15 @@ class Solution:
             root=root.right
         return True
 
+
+class Solution:
+    def isValidBST(self, root: 'TreeNode') -> 'bool':
+        stack=[]
+        while stack or root:
+            #traverse left most leaf
+            while root:
+                stack.append(root)
+                root=root.left
+            root=stack.pop()
+            root=root.right
+        return True

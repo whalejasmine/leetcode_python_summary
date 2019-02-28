@@ -31,7 +31,7 @@ class Solution(object):
             else:
                 tail.next = l2
                 l2 = l2.next
-            tail = tail.next
+            tail = tail.next #important to iterate next node
         tail.next = l1 or l2
         return head.next
 
