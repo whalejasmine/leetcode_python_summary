@@ -34,6 +34,7 @@ if __name__ == "__main__":
 
 class Solution2:
     def productExceptSelf(self, nums: 'List[int]') -> 'List[int]':
+        from functools import reduce
 
         return [reduce(lambda x,y: x*y,nums[:i]+nums[i+1:]) for i in range(len(nums))]
 if __name__ == "__main__":

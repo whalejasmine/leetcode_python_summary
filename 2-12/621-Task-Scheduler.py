@@ -50,9 +50,13 @@ class Solution:
 # Algorithm
 
 # This is an extremely tricky problem.
-# The main idea is to schedule the most frequent tasks as frequently as possible. Begin with scheduling the most frequent task. Then cool-off for n, and in that cool-off period schedule tasks in order of frequency, or if no tasks are available, then be idle.
+# The main idea is to schedule the most frequent tasks as frequently as possible. 
+# Begin with scheduling the most frequent task. 
+# Then cool-off for n, and in that cool-off period schedule tasks in order of frequency, 
+# or if no tasks are available, then be idle.
 # Exampe: Say we have the following tasks: [A,A,A,B,C,D,E] with n =2
-# Now if we schedule using the idea of scheduling all unique tasks once and then calculating if a cool-off is required or not, then we have: A,B,C,D,E,A,idle,dile,A i.e. 2 idle slots.
+# Now if we schedule using the idea of scheduling all unique tasks once and then calculating 
+# if a cool-off is required or not, then we have: A,B,C,D,E,A,idle,dile,A i.e. 2 idle slots.
 # But if we schedule using most frequent first, then we have:
 # 2.1: A,idle,idle,A,idle,idle,A
 # 2.2: A,B,C,A,D,E,A i.e. no idle slots. This is the general intuition of this problem.
@@ -89,7 +93,7 @@ class Solution:
                     heapq.heappush(heap, -cnt)
             
             count += cycle if len(heap) > 0 else worktime
-
+            #why count += cycle
         return count
 
 
